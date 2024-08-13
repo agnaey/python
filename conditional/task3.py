@@ -60,11 +60,31 @@
 
 # q5
 
-no=int(input("enter a number : "))
+# no=int(input("enter a number : "))
 
-lst= no % 10
+# lst= no % 10
 
-if lst % 3==0:
-    print(f"the lst digit of {no} the lst no {lst} is divisble by 3")
+# if lst % 3==0:
+#     print(f"the lst digit of {no} the lst no {lst} is divisble by 3")
+# else:
+#     print(f"the lst digit of {no} the lst no {lst} is not divisble by 3")
+
+
+# q6
+
+cost=int(input("enter the cost of the bike : "))
+
+if cost > 100000:
+    tax=0.15
+    tax=0.15 * cost
+    total=(0.05* cost)+cost
+elif cost > 50000:
+    tax=0.10 * cost
+    total=(0.15* cost)+cost
+
 else:
-    print(f"the lst digit of {no} the lst no {lst} is not divisble by 3")
+    tax=0.05*cost
+    total=(0.05* cost)+cost
+
+
+print(f"your road tax is {tax}.the total amount is {total}")

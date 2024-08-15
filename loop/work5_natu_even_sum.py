@@ -4,11 +4,11 @@ start=a
 x=y=z=0
 
 while a<=b:
-    x=x+1
+    x=x+a
     if a%2==0:
         y=y+a
     else:
-        z=z+1
+        z=z+a
     a+=1
 print(f"natural no {start},{b} is {x}")
 print(f"natural no {start},{b} is {y}")

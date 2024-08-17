@@ -98,22 +98,23 @@
 
 # -----------identity operator----------------
 
-#is
-# a=10
-# b=10
-# print(a==b)
-# print(a is b)
-# print(id(a))
-# print(id(b))
+# is
 
-# a=7
-# b=11
-# print(a is b)
-# print(id(a))
-# print(id(b))
+a=10
+b=10
+print(a==b)
+print(a is b)
+print(id(a))
+print(id(b))
 
-# list=[10,20]
-# list1=[10,20]
-# print(list is list1)
-# print(id(list))
-# print(id(list1))
+a=7
+b=11
+print(a is b)
+print(id(a))
+print(id(b))
+
+list=[10,20]
+list1=[10,20]
+print(list is list1)
+print(id(list))
+print(id(list1))

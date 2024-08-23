@@ -1,4 +1,5 @@
-employe=[]
+import datetime
+employe=[[1, 'agnaey', 22, 'ekm', 8943819983, 'hr', 2000, ['placement', '08/23/24', 3]], [2, 'biju', 22, 'kanoor', 43367, 'manager', 20000, ['notes', '08/23/24', 2]], [3, 'boby', 22, 'calicut', 43367, 'manager', 20000]]
 while True:
     print(
     '''
@@ -22,7 +23,7 @@ while True:
         salary=int(input("enter the Salary of Employe :"))
         employe.append([id,name,age,place,phone,position,salary])
     elif ch==2:
-        print('{:<10}{:<20}{:<8}{:<20}{:<15}{:<15}{:<20}'.format('id','name','age','place','phone','position','salary'))
+        print('{:<10}{:<20}{:<8}{:<20}{:<10}{:<15}{:<20}'.format('id','name','age','place','phone','position','salary'))
         print('-'*100)
         for i in employe:
             print('{:<10}{:<20}{:<8}{:<20}{:<10}{:<15}{:<20}'.format(i[0],i[1],i[2],i[3],i[4],i[5],i[6]))
@@ -63,5 +64,51 @@ while True:
                         break
                     else:
                         print('invalid number')
+
+    elif ch==4:
+        id=int(input("enter the employe to remove :"))
+        f=0
+        for i in employe:
+            if id in i:
+                f=1
+                employe.remove(i)
+        if f==0:
+            print('employe not found')
+    elif ch==5:
+        id=int(input('enter employ id : '))
+        f=0
+        for i in employe:
+            if id in i:
+                f=1
+                task=input('enter the task :')
+                date=datetime.datetime.now().strftime("%x")
+                days=int(input('how many days :'))
+                i.append([task,date,days])
+        if f==0:
+                print('employ not found')
+    elif ch==6:
+        id=int(input('enter employe id :'))
+        f=0
+        for i in employe:
+            if id in i:
+                f=1
+                print('{:<10}{:<20}{:<8}{:<20}{:<10}{:<15}{:<20}'.format('id','name','age','place','phone','position','salary'))
+                print('{:<10}{:<20}{:<8}{:<20}{:<10}{:<15}{:<20}'.format(i[0],i[1],i[2],i[3],i[4],i[5],i[6]))
+                print('work details')
+                if len(i)==8:
+                    print(i[7])
+                else:
+                    print('no work avalible')
+
+        if f==0:
+            print('employe not found')
+    elif ch==7:
+        break
+    else:print('invalid no')
+
+
+
+        
+
 
             

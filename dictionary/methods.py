@@ -13,7 +13,7 @@ d={'name':'agnaey','age':'22','mark':'28'}
 # d.popitem()
 
 # d.update({'name1':'manu'})
-d.update({'name':'tutu'})
+# d.update({'name':'tutu'})
 
 # d['name']='akhil'
 # d.setdefault('place')
@@ -21,4 +21,4 @@ d.update({'name':'tutu'})
 
 # l=['a','b','c','d']
 # l=[1,2,3,4]
-print(d.fromkeys(l))
+# print(d.fromkeys(l))

@@ -1,174 +1,140 @@
 emp=[]
-
 def login():
-    username=input('enter username :')
-    password=input('enter password :')
+    uname=input('ener your user name: ')
+    passwrd=input('ener your password: ')
     f=0
     user=''
-    if username=='admin' and password=='admin':
+    if uname=='admin' and passwrd=='admin':
         f=1
-        print('welcome',username)
     for i in emp:
-        if i['id']==username and i['password']==password:
+        if i['id']==uname and i['password']==passwrd:
             f=2
             user=i
     return f,user
+
 def add_emp():
-    id=input("Enter the id :")
+    id=str(input('enter your id: '))
     f1=0
     for i in emp:
         if i['id']==id:
             f1=1
-            print("Employee already exists")
+            print('existing id')
+            add_emp()
     if f1==0:
-            name=input("Enter the name :")
-            age=int(input("Enter the age :"))
-            place=input("Enter the place :")
-            phone=int(input("Enter the phone :"))
-            position=input("Enter the position :")
-            salary=int(input("Enter the salary :"))
-            password=name
-            emp.append({'id':id,'name':name ,'age':age,'place':place,'phone':phone,'position':position,'salary':salary,'password':password})
-            print(".....Employee added.....")
-
-
-    
-def display_emp():
-    print("{:<10}{:<20}{:<8}{:<20}{:<13}{:<15}{:<20}{:<10}".format('id','name','age','place','phone','position','salary','password'))
-    print('-'*100)
-    for i in emp:
-        print("{:<10}{:<20}{:<8}{:<20}{:<13}{:<15}{:<20}{:<10}".format(i['id'],i['name'],i['age'],i['place'],i['phone'],i['position'],i['salary'],i['password']))
-        print('-'*100)
-
-    print()
-
-def delete_emp():
-    id=input("Enter your id :")
-    f1=0
+        name=input('enter your name: ')
+        age=int(input('enter your age: '))
+        salary=int(input('enter your salary: '))
+        place=input('enter your place: ')
+        dob=int(input('enter your date of birth: '))
+        password=dob
+        emp.append({'id':id,'name':name,'age':age,'salary':salary,'place':place,'date_of_birth':dob,'password':password})
+        print('Employee added successfully')
+def update():
+    id=str(input('enter your id: '))
+    f2=0
     for i in emp:
         if i['id']==id:
-            f1=1
+            f2=1
+            name=(input('enter your name: '))
+            age=int(input('enter your age: '))
+            salary=int(input('enter your salary: '))
+            place=(input('enter your place: '))
+            dob=(input('enter your date of birth: '))
+            i['name']=name
+            i['age']=age
+            i['salary']=salary
+            i['place']=place
+            i['date_of_birth']=dob
+            print('updated successfully')
+    if f2==0:
+        print('invalid id!!!')
+def delete():
+    id=input('enter your id: ')
+    f3=0
+    for i in emp:
+        if i['id']==id:
+            f3=1
             emp.remove(i)
-            print(".....Employee deleted.....")
-    if f1==0:
-            print("Employee not found")
-
-def emp_update():
-    id=input("Enter the id :")
-    f1=0
+            print('REMOVED!!!')
+    if f3==0:
+        print('invalid id!!!')
+def display():
+    print('_'*65)
+    print("{:<10}{:<10}{:<10}{:<10}{:<10}{:<15}".format('id','name','age','salary','place','date of birth'))
+    print('-'*65)
     for i in emp:
-        if i['id']==id:
-            f1=1
-            name=input("Enter the name :")
-            age=int(input("Enter the age :"))
-            place=input("Enter the place :")
-            phone=int(input("Enter the phone :"))
-            position=input("Enter the position :")
-            salary=int(input("Enter the salary :"))
+            print("{:<10}{:<10}{:<10}{:<10}{:<10}{:<15}".format(i['id'],i['name'],i['age'],i['salary'],i['place'],i['date_of_birth']))
+def view_profile(user):
+    # print(user)
+    print('_'*65)
+    print("{:<10}{:<10}{:<10}{:<10}{:<10}{:<15}".format('id','name','age','salary','place','date of birth'))
+    print('-'*65)
+    print("{:<10}{:<10}{:<10}{:<10}{:<10}{:<15}".format(user['id'],user['name'],user['age'],user['salary'],user['place'],user['date_of_birth']))
+def user_update(user):
+    f4=0
+    for i in emp:
+        if i['id']==user['id']:
+            f4=1
+            name=input('enter the updatede name: ')
+            age=int(input('enter your age: '))
+            place=(input('enter your place: '))
+            dob=(input('enter your date of birth: '))
             i['name']=name
             i['age']=age
             i['place']=place
-            i['phone']=phone
-            i['position']=position
-            i['salary']=salary
-            print(".....Employee updated.....")
-    if f1==0:
-        print("Employee not found")
-
-def view_profile():
-    print("{:<10}{:<20}{:<8}{:<20}{:<13}{:<15}{:<20}{:<10}".format('id','name','age','place','phone','position','salary','password'))
-    print('-'*100)
-    for i in emp:
-        print("{:<10}{:<20}{:<8}{:<20}{:<13}{:<15}{:<20}{:<10}".format(i['id'],i['name'],i['age'],i['place'],i['phone'],i['position'],i['salary'],i['password']))
-
-def edit_profile():
-    f1=0
-    for i in emp:
-        if i['id']==id:
-            f1=1
-            name=input("Enter your name :")
-            age=int(input("Enter your age :"))
-            place=input("Enter your place :")
-            phone=int(input("Enter your phone :"))
-            position=input("Enter your position :")
-            salary=int(input("Enter your salary :"))
-            i['name']=name
-            i['age']=age
-            i['place']=place
-            i['phone']=phone
-            i['position']=position
-            i['salary']=salary
-            print(".....edited.....")
-    if f1==0:
-        print("Employee not found")
-
-
-
-
+            i['date_of_birth']=dob
+            print('updated successfully...')
+    if f4==0:
+        print('invalid id!!!!')
+    
 while True:
-    print(
-        ''''
-        1.register
-        2.login
-        3.exit
-        '''
-    )
-    ch=int(input('enter your choise :'))
-    if ch==1:
+    print('''
+    1.login
+    2.exit''')
+    choice=int(input('enter the  choice: '))
+    if choice==1:
         f,user=login()
-        #admin
-        if f==1:
+        if f==1: #admin login
             while True:
-                print(
-                    '''
-                    1.add employee
-                    2.display employee
-                    3.delete employee
-                    4.update employee
+                print('''
+                    1.add emp
+                    2.update emp
+                    3.delete
+                    4.diplay
                     5.logout
-                    '''
-                )
-                ch=int(input('enter your choise :'))
-                if ch==1:
+                    ''')
+                sub_choice=int(input('enter your choice: '))
+                if sub_choice==1:
                     add_emp()
-                elif ch==2:
-                    display_emp()
-                elif ch==3:
-                    display_emp()
-                elif ch==4:
-                    emp_update()
-                elif ch==5:
-                    print('.....exited.....')
+                elif sub_choice==2:
+                    update()
+                elif sub_choice==3:
+                    delete()
+                elif sub_choice==4:
+                    display()
+                elif sub_choice==5:
                     break
-        elif f==0:
-            print('invalid user or password')
-        elif f==2:
-            while True:
-                if user['name']==user['password']:    
-                    print('create new password')
-                    password=input('enter password :')
-                    user['password']=password
-                    print('password created')
                 else:
-                    print(
-                        '''
+                    print('invalid choice')
+        elif f==0:
+            print('invalid username or passsword!!!')
+        elif f==2: #user login
+            while True:
+                if user['date_of_birth']==user['password']:
+                    password=input('enter a new password')
+                    user['password']=password
+                else:
+                    print('''
                         1.view profile
                         2.edit profile
                         3.logout
-'''
-                    )
-                    cho=int(input('enter your choise :'))
-                    if cho==1:
+    ''')
+                    sub_ch=int(input('enter your choice: '))
+                    if sub_ch==1:
                         view_profile(user)
-                    elif cho==2:
-                        edit_profile(user)
-                    elif cho==3:
-                        print('.....exited.....')
-                        break
-    elif ch==2:
-        print('.....exited.....')
+                    elif sub_ch==2:
+                        user_update(user)
+                    elif sub_ch==3:
+                        break 
+    elif choice==2:
         break
-        
-
-
-    

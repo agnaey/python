@@ -108,8 +108,9 @@ def edit_profile():
 while True:
     print(
         ''''
-        1.login
-        2.exit
+        1.register
+        2.login
+        3.exit
         '''
     )
     ch=int(input('enter your choise :'))

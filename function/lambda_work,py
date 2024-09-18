@@ -1,0 +1,44 @@
+def number():
+    a=int(input('enter a no:'))
+    b=int(input('enter another no:'))
+    return a,b 
+
+add=lambda a,b:a+b
+sub=lambda a,b:a-b
+mul=lambda a,b:a*b
+div=lambda a,b:a/b
+mod=lambda a,b:a%b
+
+
+
+
+while True:
+    print(
+        '''
+1.add
+2.sub
+3.mul
+4.div
+5.mod
+6.exit
+'''
+    )
+    ch=int(input('enter your choise:'))
+    if ch==1:
+        a,b=number()
+        print(add(a,b))
+    elif ch==2:
+        a,b=number()
+        print(sub(a,b))
+    elif ch==3:
+        a,b=number()
+        print(mul(a,b))
+    elif ch==4:
+        a,b=number()
+        print(div(a,b))
+    elif ch==5:
+        a,b=number()
+        print(mod(a,b))
+    elif ch==6:
+        break
+    else:print('invalid no')

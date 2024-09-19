@@ -53,27 +53,47 @@ def view_book():
     for i in book:
         print('{:<10}{:<10}{:<10}{:<10}'.format(i['id'],i['name'],i['stock'],i['price']))
 
-# def update_book():
-    # for i in book:
-        # if i in ['id']==
+def update_book():
+    id=input('enter your id: ')
+    f2=0
+    for i in book:
+        if i ['id']==int(id):
+            f2=1
+            name=(input('update books name: '))
+            stock=int(input('update books stock: '))
+            price=int(input('update books price: '))
+            i['name']=name
+            i['stock']=stock
+            i['price']=price
+            print('updated successfully')
+    if f2==0:
+        print('---------invalid id-------')
 
-# def delete_book():
-#         id=input('enter your id: ')
-#         f3=0
-#         for i in emp:
-#             if i['id']==id:
-#                 f3=1
-#             book.remove(i)
-#             print('REMOVED!!!')
-#         if f3==1:
-#             print('invalid id')
+
+def delete_book():
+        id=input('enter books id: ')
+        f3=0
+        for i in book:
+            if i['id']==id:
+                f3=1
+            book.remove(i)
+            print('-------REMOVED------')
+        if f3==1:
+            print('-----invalid id------')
+
+def view_users():
+    print('{:<10}{:<10}{:<10}{:<10}'.format('id','name','email','address','mobile'))
+    print('-'*40)
+    for i in lib:
+        print('{:<10}{:<10}{:<10}{:<10}'.format(i['id'],i['name'],i['email'],i['address'],i['mobile']))
+
 
 while True:
     print(
         '''
 1.register
 2.login
-2.exit
+3.exit
 '''
     )
     ch=int(input('enter your choice :'))
@@ -90,18 +110,23 @@ while True:
 2.view book
 3.update book
 4.delete book
-5.view book
+5.view users
+6.logout
 '''
                 )
                 sub_ch=int(input('enter your choice: '))
                 if sub_ch==1:
                     add_book()
-                if sub_ch==2:
+                elif sub_ch==2:
                     view_book()
-                if sub_ch==3:
+                elif sub_ch==3:
                     update_book()
-                if sub_ch==4:
+                elif sub_ch==4:
                     delete_book()
+                elif sub_ch==5:
+                    view_users()
+                else:
+                    break
         elif f==2:
             print('---------user login----------')
 

@@ -1,8 +1,8 @@
-# l=[1,2,5,7,8]
-# x=0
-# for i in l:
-#     x=x+i
-# print(x)
+l=[1,2,5,7,8]
+x=0
+for i in l:
+    x=x+i
+print(x)
 
 """23"""
 

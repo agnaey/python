@@ -1,3 +1,5 @@
+##added exception handling on choise
+
 std=[{'name': 'agnaey', 'age': '20', 'mark': '31'}, {'name': 'tutu', 'age': '21', 'mark': '12'}]
 while True:
     print('''
@@ -8,7 +10,12 @@ while True:
 5)exit
 '''
 )
-    ch=int(input('enter a choise:'))
+    while True:
+        try:
+            ch=int(input('enter a choise:'))
+            break
+        except:
+            print('----enter correct data----')
     if ch==1:
         name=str(input('enter the name :'))
         age=str(input('enter the age :'))

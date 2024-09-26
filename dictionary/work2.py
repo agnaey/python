@@ -1,3 +1,5 @@
+##added exception handling on choise
+
 pro=[]
 while True:
     print(
@@ -9,7 +11,15 @@ while True:
 5.exit
 '''
     )
-    ch=int(input('enter your choice :'))
+    while True:
+        try:
+            ch=int(input('enter your choice :'))
+            break
+        except:
+            print('----enter correct data----' )
+
+        
+
     if ch==1:
         code=int(input('enter the code : '))
         name=input('enter the cloth name :')
@@ -38,7 +48,12 @@ while True:
 4.exit
 '''
                     )
-                    ch=int(input(' enter your choise : '))
+                    while True:
+                        try:
+                            ch=int(input(' enter your choise : '))
+                            break
+                        except:
+                            print('----enter data correctly----')
                     if ch==1:
                         new_stock=int(input('enter the new stock:'))
                         i['stock']=new_stock

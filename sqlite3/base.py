@@ -39,7 +39,8 @@ for i in range(limit):
 # for i in data:
 #   print(i)
 
- ##  user input filter
+'''user input filter'''
+
 # roll=int(input('enter the age:'))
 # data=con.execute('select * from std where roll_no=?',(roll,))
 # for i in data:

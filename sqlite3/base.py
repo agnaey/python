@@ -13,14 +13,14 @@ except:
 # con.commit()    ##to save                                       ##        ^^^ you can add multiple pepl using comma and add again
 
 
-limit=int(input('enter the limit:'))
-for i in range(limit):
-  roll=int(input('enter a no:'))
-  name=input('enter your name:')
-  age=int(input('enter your age:'))
-  mark=float(input('enter your mark:'))
-  con.execute('insert into std(roll_no,name,age,mark)values(?,?,?,?)',(roll,name,age,mark))
-  con.commit()
+# limit=int(input('enter the limit:'))
+# for i in range(limit):
+#   roll=int(input('enter a no:'))
+#   name=input('enter your name:')
+#   age=int(input('enter your age:'))
+#   mark=float(input('enter your mark:'))
+#   con.execute('insert into std(roll_no,name,age,mark)values(?,?,?,?)',(roll,name,age,mark))
+#   con.commit()
 
 # ----------------------------
 
@@ -71,3 +71,42 @@ for i in range(limit):
 # data=con.execute('delete from std where roll_no=?',(roll_no,))
 # con.commit()
 
+
+''' search %'''
+
+''' first letter search'''
+
+# data=con.execute('select * from std where name like "a%" ')
+# for i in data:
+#    print(i)
+
+''' last letter search'''
+
+# data=con.execute('select * from std where name like "%y"')
+# for i in data:
+#     print(i)
+
+''' 2nd letter search'''
+
+# data=con.execute('select * from std where name like "_g%"')
+# for i in data:
+#     print(i)
+
+''' name order'''
+# data=con.execute('select * from std order by name')
+# for i in data:
+#     print(i)
+
+
+'''desending order'''
+
+# data=con.execute('select * from std order by name desc')
+# for i in data:
+#     print(i)
+
+'''agrigate fun'''
+### min,max,sum,count,average
+
+data=con.execute('select name,min(mark) from std group by mark')
+for i in data:
+    print(i)

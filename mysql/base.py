@@ -7,7 +7,7 @@ try:
     cur.execute("create table std (roll_no int,name text,age int)")
 except:
     print('table already exits')
-cur.execute('insert into std (roll_no,name,age) values(1,"akshay",21),(2,"tutu",20)')       ##to insert values
+# cur.execute('insert into std (roll_no,name,age) values(1,"akshay",21),(2,"tutu",20)')       ##to insert values
 
 
 '   to print the inserted data'

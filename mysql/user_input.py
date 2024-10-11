@@ -14,15 +14,32 @@ except:
 # cur.execute('insert into std (roll_no,name,age) values(%s,%s,%s)',(roll_no,name,age))
 
 '''    update '''
-name=(input('enter your name:'))
-u_name=(input('enter new name:'))
-cur.execute('update std set name=%s where name =%s',(u_name,name))
+# name=(input('enter your name:'))
+# u_name=(input('enter new name:'))
+# cur.execute('update std set name=%s where name =%s',(u_name,name))
 
 
 '''delete'''
 
 # roll_no=int(input('delete roll no:'))
 # cur.execute('delete from std where roll_no=%s',(roll_no,))
+
+'''search'''
+# roll_no=int(input('enter the roll no:'))
+# cur.execute('select * from std where roll_no=%s',(roll_no,))
+# print('{:<10}{:<20}{:<10}'.format('roll_no','name','age'))
+# print('-'*35)
+# for i in cur:
+#     print('{:<10}{:<20}{:<10}'.format(i[0],i[1],i[2]))
+
+'''view'''
+cur.execute('select * from std')
+print('{:<10}{:<20}{:<10}'.format('roll_no','name','age'))
+print('-'*35)
+for i in cur:
+    print('{:<10}{:<20}{:<10}'.format(i[0],i[1],i[2]))
+
+
 
 
 

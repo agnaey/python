@@ -13,11 +13,13 @@ def reg_form():                ## reg form after clicking register
     win1.minsize(400,400)
     win1.config(bg='yellow')
 
-    # def print1():              ## in terminal print
+    def print1():             
+        print('register name:',e1.get())         ## in terminal print
+        l2. config(text=e1.get())               ## to show in output on notepad
 
 
-    def save():                      ## save the reg
-        l2. config(text=e1.get())
+    # def save():                      ## save the reg
+    #     l2. config(text=e1.get())
 
     l1=tkinter.Label(win1,text='Register form',bg='yellow',fg='red')
     l1.pack()
@@ -29,7 +31,7 @@ def reg_form():                ## reg form after clicking register
     l3.place(x=80,y=70)
     e3=tkinter.Entry(win1)                   ##input box          
     e3.place(x=150,y=70)
-    b3=tkinter.Button(win1,text='save',bg='red',activebackground='green',fg='black',activeforeground='white',padx=20,pady=10,command=save,command=print1)     
+    b3=tkinter.Button(win1,text='save',bg='red',activebackground='green',fg='black',activeforeground='white',padx=20,pady=10,command=print1)     
     b3.place(x=150,y=100) 
     l2=tkinter.Label(win1)            ## to show the name
     l2.place(x=160,y=150)
@@ -38,7 +40,8 @@ def reg_form():                ## reg form after clicking register
     
 
 def save():
-    l2. config(text=e1.get())
+    print('username: ',e1.get())     ##to show on terminal
+    l2. config(text=e1.get())          ## to show in output on notepad
 
 l1=tkinter.Label(win,text='hello world',bg='yellow',fg='red')
 l1.pack()
@@ -55,7 +58,7 @@ l3.place(x=80,y=70)
 e3=tkinter.Entry(win)                             ##  input form
 e3.place(x=150,y=70)
 
-b3=tkinter.Button(win,text='save',bg='red',activebackground='green',fg='black',activeforeground='white',padx=20,pady=10,command=save,command=print1)     
+b3=tkinter.Button(win,text='save',bg='red',activebackground='green',fg='black',activeforeground='white',padx=20,pady=10,command=save)  
 b3.place(x=100,y=100) 
 
 b1=tkinter.Button(win,text='register',bg='red',activebackground='green',fg='black',activeforeground='white',padx=20,pady=10,command=reg_form)     
